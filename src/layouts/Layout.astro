@@ -16,14 +16,17 @@ const { title } = Astro.props;
 		<title>{title}</title>
 	</head>
 	<body class="bg-gray-800 text-white">
-		<main class="max-w-[1200px] md:w-[80%] m-auto min-h-screen py-7">
+		<main class="max-w-[1200px] w-[90%] md:w-[80%] m-auto min-h-screen py-7">
 			<slot />
 		</main>
 	</body>
 </html>
 <style is:global>
-	h1{
-		font-size: 30px;
-		font-weight: 900;
+	h2{
+		margin-bottom: 0.75rem; 
+font-size: 1.875rem;
+line-height: 2.25rem; 
+font-weight: 700; 
+text-align: center; 
 	}
 </style>

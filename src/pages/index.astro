@@ -1,36 +1,12 @@
 ---
-import Proyect from "../components/Proyect.astro";
+import MyProyects from "../components/MyProyects.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 <Layout title="PORFORIO | JOSUE MAMANI AGREDA">
-  <h1>PORFORIO | JOSUE MARTIN MAMANI AGREDA</h1>
-  <h2 class="text-center font-bold text-3xl mb-3">Mis proyectos</h2>
-  <div class="flex flex-wrap justify-around items-center gap-4">
-    <Proyect 
-      image="synergo.png"
-      name="synergoed"
-      href="https://synergoed.com/"
-    >
-    </Proyect>
-    <Proyect 
-      image="colquiri.png"
-      name="colquiri"
-      href="https://gamcolquiri.gob.bo/"
-    >
-    </Proyect>
-    <Proyect 
-      image="agrofast.png"
-      name="agrofast"
-      href="https://agrofastsrl.com/"
-    >
-    </Proyect>
-    <Proyect 
-      image="rosefimport.png"
-      name="rosefimport"
-      href="https://rosef-importaciones.vercel.app/"
-    >
-    </Proyect>
+  <div class="py-6 font-bold text-2xl">
+    <h1>PORTAFOLIO | JOSUE MARTIN MAMANI AGREDA</h1>
   </div>
-  <h2>Sobre mi</h2>
+  <MyProyects />
   <h2>Mis conocimientos</h2>
+  <h2>Sobre mi</h2>
 </Layout>

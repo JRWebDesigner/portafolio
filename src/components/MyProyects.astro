@@ -1,0 +1,25 @@
+---
+import Proyects from "./Proyects.astro";
+---
+
+<h2>My proyects</h2>
+  <div class="w-[90%] m-auto flex flex-col justify-center items-center gap-7">
+    <Proyects/>
+    <a class="p-2 w-[60%] rounded-2xl bg-gray-700 font-bold text-center text-[17px] hover:bg-black duration-200 ease-linear border-[1px]" href="">View more</a>
+  </div>
+  <style>
+    a{
+        animation: infinite 2s bgAnimate;
+    }
+    @keyframes bgAnimate {
+        0%{
+            border-color: #fff;
+        }
+        50%{
+            border-color: rgb(88, 105, 255);
+        }
+        100${
+            border-color: #fff;
+        }
+    }
+  </style>
