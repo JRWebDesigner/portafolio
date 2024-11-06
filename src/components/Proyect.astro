@@ -1,0 +1,16 @@
+---
+const { image, name, href} = Astro.props;
+---
+<div class="flex flex-col gap-5 p-2 bg-gray-900 rounded-xl max-w-[380px] justify-center items-center">
+  <img
+    class="rounded-2xl"
+    width="400"
+    height="300"
+    src=`portadas/${image}`
+    alt={name}
+  />
+  <div class="flex flex-col gap-4 opacity-70 text-[17px]">
+    <slot />
+  </div>
+  <a class="w-full rounded-2xl bg-blue-600 p-3 text-center cursor-pointer hover:bg-blue-800 font-bold hover:text-[17px]" target="_blank" href={href}>VER PROYECTO</a>
+</div>

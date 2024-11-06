@@ -1,0 +1,29 @@
+---
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body class="bg-gray-800 text-white">
+		<main class="max-w-[1200px] md:w-[80%] m-auto min-h-screen py-7">
+			<slot />
+		</main>
+	</body>
+</html>
+<style is:global>
+	h1{
+		font-size: 30px;
+		font-weight: 900;
+	}
+</style>
