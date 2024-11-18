@@ -3,11 +3,20 @@ import MyProyects from "../components/MyProyects.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 <Layout title="PORFORIO | JOSUE MAMANI AGREDA">  
-  <div class="text-5xl font-bold text-center min-h-[40vh] w-full flex flex-col justify-center items-center bg-sky-950 rounded-br-full rounded-bl-full py-10 gap-10 shadow-xl shadow-sky-500">
-    <span id="welcome_text">BIENVENIDO A MI PORTAFOLIO</span>
+  <div class="entry text-3xl md:text-5xl font-bold text-center min-h-[40vh] w-full flex flex-col justify-center items-center bg-sky-950 rounded-br-full rounded-bl-full py-10 gap-10 shadow-xl shadow-sky-500">
+    <span id="welcome_text">WELCOME TO MY PORTFOLIO</span>
     <div class="max-w-[1000px] w-[90%] m-auto font-bold my-7 text-2xl flex justify-center items-center gap-7">
       <div class="bg-gray-500 w-[200px] h-[200px] rounded-full"></div>
-      <h1 id="title" class="text-4xl text-center text-white"></h1>
+      <div class="text-white">
+        <h1 id="title" class="text-xl md:text-4xl text-center"></h1>
+        <span>Web Developer</span>
+      </div>
+    </div>
+    <div class="flex justify-center gap-4 md:justify-around items-center md:gap-10 flex-wrap w-[60%]">
+      <img src="/icons/brand-astro.svg" alt="" class="icon"><img src="/icons/brand-react.svg" alt="" class="icon"><img src="/icons/brand-tailwind.svg" alt="" class="icon"><img src="/icons/brand-bootstrap.svg" alt="" class="icon"><img src="/icons/brand-html5.svg" alt="" class="icon">
+      <img class="icon" src="/icons/brand-javascript.svg" alt="">
+      <img src="/icons/brand-typescript.svg" alt="" class="icon">
+      <img src="/icons/file-type-css.svg" alt="" class="icon">
     </div>
   </div>
   <MyProyects />
@@ -16,9 +25,28 @@ import Layout from "../layouts/Layout.astro";
 </Layout>
 <style>
    #welcome_text{
-    background: linear-gradient(to right, #ffffff , #ffffff );
+    background: linear-gradient(to right, #ffffff 30%, #ffffff );
     background-clip: text;
 		color: transparent;
+  }
+  .entry{
+    animation: 1.7s entry_animaition ease-out;
+  }
+  .icon{
+    width: 30px;
+  }
+  @media (min-width: 768px) {
+    .icon{
+    width: 40px;
+  }
+}
+  @keyframes entry_animaition {
+    0%{
+      transform: translateY(-100%);
+    }
+    100%{
+      transform: translateY(0);
+    }
   }
 </style>
 <script>
