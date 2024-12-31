@@ -5,22 +5,32 @@ import Layout from "../layouts/Layout.astro";
 <Layout title="PORFORIO | JOSUE MAMANI AGREDA">  
   <div class="entry text-3xl md:text-5xl font-bold text-center min-h-[30vh] md:min-h-[40vh] w-full flex flex-col justify-center items-center bg-sky-950 rounded-br-full rounded-bl-full py-10 md:gap-10 shadow-xl shadow-sky-500">
     <span id="welcome_text" class="w-[90%]">WELCOME TO MY PORTFOLIO</span>
-    <div class="max-w-[1000px] w-[90%] m-auto font-bold my-7 text-2xl flex justify-center items-center md:gap-7">
-      <div class="bg-gray-500 w-[140px] h-[140px] md:w-[200px] md:h-[200px] rounded-full"></div>
+    <div class="max-w-screen-xl w-[90%] m-auto font-bold my-7 text-2xl flex justify-center items-center md:gap-7">
+      <img class="bg-gray-500 w-[140px] h-[140px] md:w-[200px] md:h-[200px] rounded-full object-cover" src="fotoperfil.jpg"/>
       <div class="text-white">
         <h1 id="title" class="text-lg md:text-4xl text-center"></h1>
         <span class="text-lg">Web Developer</span>
       </div>
     </div>
-    <div class="flex justify-center gap-4 md:justify-around items-center md:gap-10 flex-wrap w-[60%]">
+    
+    <div class="flex justify-center gap-4 md:gap-7 md:justify-center items-center flex-wrap w-[60%]">
       <img src="/icons/brand-astro.svg" alt="" class="icon"><img src="/icons/brand-react.svg" alt="" class="icon"><img src="/icons/brand-tailwind.svg" alt="" class="icon"><img src="/icons/brand-bootstrap.svg" alt="" class="icon"><img src="/icons/brand-html5.svg" alt="" class="icon">
       <img class="icon" src="/icons/brand-javascript.svg" alt="">
       <img src="/icons/brand-typescript.svg" alt="" class="icon">
       <img src="/icons/file-type-css.svg" alt="" class="icon">
     </div>
   </div>
+  <div class="flex items-center max-w-screen-xl w-[80%] m-auto mt-14 text-xl">
+    <p>
+      Front-end developer with over a year of experience creating innovative and optimized web solutions. Passionate about technology and self-taught by nature, I seek to contribute to the growth of companies by combining exceptional web performance, accessible design, and modern methodologies.
+    </p>
+    <img width="500px" src="present.png" alt="">
+  </div>
   <MyProyects />
-  <h2>Mis conocimientos</h2>
+  <div class="max-w-screen-xl w-[90%] m-auto flex flex-col items-center mt-16 text-white">
+    <h2>Mis conocimientos</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum expedita minima quaerat optio cum at quisquam animi tempore fugiat. Odit.</p>
+  </div>
   <h2>Sobre mi</h2>
 </Layout>
 <style>
