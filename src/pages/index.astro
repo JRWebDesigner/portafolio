@@ -1,6 +1,7 @@
 ---
 import MyProyects from "../components/MyProyects.astro";
 import Layout from "../layouts/Layout.astro";
+import LogosLenguage from "../components/LogosLenguage.astro";
 ---
 <Layout title="PORFORIO | JOSUE MAMANI AGREDA">  
   <div class="entry text-3xl md:text-5xl font-bold text-center min-h-[30vh] md:min-h-[40vh] w-full flex flex-col justify-center items-center bg-sky-950 rounded-br-full rounded-bl-full py-10 md:gap-10 shadow-xl shadow-sky-500">
@@ -27,11 +28,19 @@ import Layout from "../layouts/Layout.astro";
     <img width="500px" src="present.png" alt="">
   </div>
   <MyProyects />
-  <div class="max-w-screen-xl w-[90%] m-auto flex flex-col items-center mt-16 text-white">
-    <h2>Mis conocimientos</h2>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum expedita minima quaerat optio cum at quisquam animi tempore fugiat. Odit.</p>
+  <div class="max-w-screen-xl w-[90%] m-auto flex flex-col items-center mt-16 ">
+    <h2>My Skills</h2>
+    <LogosLenguage />
   </div>
-  <h2>Sobre mi</h2>
+  <div class="max-w-screen-xl w-[90%] m-auto flex flex-col items-center mt-16">
+    <h2>About Me</h2>
+    <div class="flex items-center flex-wrap gap-3 md:gap-0 max-w-screen-xl w-[80%] m-auto text-xl">
+      <p>
+        I am a web developer with a year of experience creating innovative and optimized web solutions. Passionate about technology and self-taught by nature, I seek to contribute to the growth of companies by combining exceptional web performance, accessible design, and modern methodologies.
+      </p>
+    </div>
+  </div>
+  
 </Layout>
 <style>
    #welcome_text{
