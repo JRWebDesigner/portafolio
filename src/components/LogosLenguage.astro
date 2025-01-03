@@ -1,23 +1,23 @@
-<div class="flex justify-around items-center flex-wrap gap-24 w-[70%] max-w-screen-lg  font-bold mt-5 ">
-    <div class="lenguage hover:scale-105 transition-all duration-300">
+<div class="grid grid-cols-2 md:flex md:justify-around items-center flex-wrap gap-24 w-[70%] max-w-screen-lg font-bold mt-5 ">
+    <div class="lenguage hover:scale-105 transition-all duration-300 scale-75">
         <img src="/logos/html.png" alt="">
         <div class="flex flex-col items-center">
-            <h3 class="text-2xl">HTML</h3>
+            <h3 class="text-2xl">HTML5</h3>
             <p class="text-lg">
                 avanzado
             </p>
         </div>
     </div>
-    <div class="lenguage hover:scale-105 transition-all duration-300">
+    <div class="lenguage hover:scale-105 transition-all duration-300 scale-75">
         <img src="/logos/css.png" alt="">
         <div class="flex flex-col items-center">
-            <h3 class="text-2xl">CSS</h3>
+            <h3 class="text-2xl">CSS3</h3>
             <p class="text-lg">
                 intermedio
             </p>
         </div>
     </div>
-    <div class="lenguage hover:scale-105 transition-all duration-300">
+    <div class="lenguage hover:scale-105 transition-all duration-300 scale-75">
         <img src="/logos/js.png" alt="">
         <div class="flex flex-col items-center">
             <h3 class="text-2xl">JavaScript</h3>
@@ -26,7 +26,7 @@
             </p>
         </div>
     </div>
-    <div class="lenguage hover:scale-105 transition-all duration-300">
+    <div class="lenguage hover:scale-105 transition-all duration-300 scale-75">
         <img src="/logos/astro.svg" alt="">
         <div class="flex flex-col items-center">
             <h3 class="text-2xl">Astrojs</h3>
@@ -35,7 +35,7 @@
             </p>
         </div>
     </div>
-    <div class="lenguage hover:scale-105 transition-all duration-300">
+    <div class="lenguage hover:scale-105 transition-all duration-300 scale-75">
         <img src="/logos/react.png" alt="">
         <div class="flex flex-col items-center">
             <h3 class="text-2xl">Reactjs</h3>
@@ -44,7 +44,7 @@
             </p>
         </div>
     </div>
-    <div class="lenguage hover:scale-105 transition-all duration-300">
+    <div class="lenguage hover:scale-105 transition-all duration-300 scale-75">
         <img src="/logos/nextjs.svg" alt="">
         <div class="flex flex-col items-center">
             <h3 class="text-2xl">Nextjs</h3>
@@ -53,12 +53,21 @@
             </p>
         </div>
     </div>
-    <div class="lenguage hover:scale-105 transition-all duration-300">
+    <div class="lenguage hover:scale-105 transition-all duration-300 scale-75">
         <img src="/logos/tailwind.png" alt="">
         <div class="flex flex-col items-center">
             <h3 class="text-2xl">TailwindCSS</h3>
             <p class="text-lg">
                 avanzado
+            </p>
+        </div>
+    </div>
+    <div class="lenguage hover:scale-105 transition-all duration-300 scale-75">
+        <img src="/logos/bootstrap.png" alt="">
+        <div class="flex flex-col items-center">
+            <h3 class="text-2xl">Bootstrap</h3>
+            <p class="text-lg">
+                Básico
             </p>
         </div>
     </div>
@@ -86,3 +95,24 @@
         }
     }
 </style>
+<script>
+    const leng = document.querySelectorAll('.lenguage')
+    const options = {
+        root: null,
+        rootMargin: "0px",
+        threshold: 0.5,
+    };
+    function Lenguage(a, b) {
+        a.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.remove("scale-75");
+            } else {
+                entry.target.classList.add("scale-75");
+            }
+        });
+    }
+    const observerL = new IntersectionObserver(Lenguage, options);
+    leng.forEach(container => {
+        observerL.observe(container)
+    })
+</script>

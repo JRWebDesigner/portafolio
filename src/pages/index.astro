@@ -9,7 +9,7 @@ import LogosLenguage from "../components/LogosLenguage.astro";
     <div class="max-w-screen-xl w-[90%] m-auto font-bold my-7 text-2xl flex justify-center items-center md:gap-7">
       <img class="bg-gray-500 w-[140px] h-[140px] md:w-[200px] md:h-[200px] rounded-full object-cover" src="fotoperfil.jpg"/>
       <div class="text-white">
-        <h1 id="title" class="text-lg md:text-4xl text-center"></h1>
+        <h1 id="title" class="text-lg md:text-4xl text-center md:min-w-[500px]"></h1>
         <span class="text-lg">Web Developer</span>
       </div>
     </div>
@@ -21,15 +21,15 @@ import LogosLenguage from "../components/LogosLenguage.astro";
     </div>
   </div>
   <div class="flex items-center flex-wrap gap-3 md:gap-0 max-w-screen-xl w-[80%] m-auto mt-14 text-xl">
-    <p class="w-full md:w-[calc(100%-500px)]">
+    <p class="w-full md:w-[calc(100%-500px)] opacity-40 paragraph duration-500">
       Front-end developer with over a year of experience creating innovative and optimized web solutions. Passionate about technology and self-taught by nature, I seek to contribute to the growth of companies by combining exceptional web performance, accessible design, and modern methodologies.
     </p>
-    <img width="500px" src="present.png" alt="">
+    <img class="comp duration-300 translate-x-32 opacity-50" width="500px" src="present.png" alt="">
   </div>
   <MyProyects />
   <div class="max-w-screen-xl w-[90%] m-auto flex flex-col items-center mt-16">
-    <p class="py-7 text-xl">
-      Throughout this year working as a freelance developer, I specialized in HTML, CSS, and JavaScript, laying the foundations for web development. Later, I incorporated Tailwind CSS into my workflow, which allowed me to reduce development time by up to 50%. Motivated by this breakthrough, I decided to learn and work with Astro.js, a tool that, like Tailwind, increased my efficiency by facilitating the construction of front-end interfaces in an agile and orderly manner. Later, I delved deeper into React, where I gained experience with tools such as useState, useEffect, useContext, and React Router, developing SSR applications. This learning allowed me to create two outstanding projects. Finally, I took the step towards Next.js, taking advantage of everything I learned in React to work on more robust and scalable projects.
+    <p class="py-7 text-xl paragraph opacity-40 duration-500">
+      Throughout this year working as a freelance developer, I specialized in HTML, CSS, and JavaScript, laying the foundations for web development. Later, I incorporated Tailwind CSS into my workflow, which allowed me to reduce development time by up to 60%. Motivated by this breakthrough, I decided to learn and work with Astro.js, a tool that, like Tailwind, increased my efficiency by facilitating the construction of front-end interfaces in an agile and orderly manner. Later, I delved deeper into React, where I gained experience with tools such as useState, useEffect, useContext, and React Router, developing SSR applications. This learning allowed me to create two outstanding projects. Finally, I took the step towards Next.js, taking advantage of everything I learned in React to work on more robust and scalable projects.
     </p>
     <h2>My Skills</h2>
     <LogosLenguage />
@@ -37,7 +37,7 @@ import LogosLenguage from "../components/LogosLenguage.astro";
   <div class="max-w-screen-xl w-[90%] m-auto flex flex-col items-center my-16">
     <h2>About Me</h2>
     <div class="flex items-center flex-wrap gap-3 md:gap-0 max-w-screen-xl w-[80%] m-auto text-xl">
-      <p>
+      <p class=" opacity-40 duration-500 paragraph">
         I am a web developer with a year of experience creating innovative and optimized web solutions. Passionate about technology and self-taught by nature, I seek to contribute to the growth of companies by combining exceptional web performance, accessible design, and modern methodologies.
       </p>
     </div>
@@ -70,18 +70,37 @@ import LogosLenguage from "../components/LogosLenguage.astro";
   }
 </style>
 <script>
-  const title=document.getElementById('title')
-  const abcd='|- abcdefghijklmnopqrstu '
-  const cad='JOSUE-MARTIN-MAMANI-AGREDA'
-  for (let i = 0; i < cad.length; i++) {
-    const caracter = cad[i];
-    
-    for (let j = 0; j < abcd.length; j++) {
-      const element = abcd[j];
-      if(element.toUpperCase()===caracter){
-        title.innerText+=caracter
-        break
+  const paragraph=document.querySelectorAll('.paragraph')
+  const comp=document.querySelector('.comp')
+  let options = {
+    root: null,
+    rootMargin: "0px",
+    threshold: 0.5,
+  };
+  function Paragraph(a, b) {
+    a.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.remove("opacity-40");
+        entry.target.classList.add("animate");
+      } else {
+        entry.target.classList.add("opacity-40");
+        entry.target.classList.remove("animate");
       }
-    }
+    });
   }
+  function Opacity(a, b) {
+    a.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.remove("translate-x-32");
+        entry.target.classList.remove("opacity-50");
+      }
+    });
+  }
+  const observerP = new IntersectionObserver(Paragraph, options);
+  const observerO = new IntersectionObserver(Opacity, options);
+  observerO.observe(comp)
+  
+  paragraph.forEach((parag) => {
+    observerP.observe(parag);
+  });
 </script>
